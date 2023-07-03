@@ -1,0 +1,17 @@
+com\br\ifsp\journaling\entities\Lembrete.class
+com\br\ifsp\journaling\controller\LoginController.class
+com\br\ifsp\journaling\repository\TokenRepository.class
+com\br\ifsp\journaling\entities\Token.class
+com\br\ifsp\journaling\repository\TokenUserRepository.class
+com\br\ifsp\journaling\entities\dto\UserLoginRequest.class
+com\br\ifsp\journaling\JournalingApplication.class
+com\br\ifsp\journaling\controller\TokenController.class
+com\br\ifsp\journaling\service\TokenService.class
+com\br\ifsp\journaling\service\UserService.class
+com\br\ifsp\journaling\controller\LembreteController.class
+com\br\ifsp\journaling\entities\enums\ResultadoLogin.class
+com\br\ifsp\journaling\entities\TokenUser.class
+com\br\ifsp\journaling\entities\dto\UserLoginResponse.class
+com\br\ifsp\journaling\entities\User.class
+com\br\ifsp\journaling\entities\dto\LembreteRequest.class
+com\br\ifsp\journaling\repository\UserRepository.class

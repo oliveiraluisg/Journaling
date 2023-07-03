@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Tarefas</title>
+  </head>
+  <body>
+    <div class="menu">
+      <div class="imgPerfil">
+        <input type="file" id="profilePicInput" style="display: none">
+        <label for="profilePicInput">
+        <span class="add-photo-btn">
+        <i class="fas fa-plus"></i>
+        </span>
+        </label>
+      </div>
+      <h4 class="nomeUsuario">{{ nome }}</h4>
+      <ul class="opcoesMenu">
+        <a href="./calendar"><i class="far fa-calendar-alt"></i>Calendário</a>
+        <a href="./lista-anotacoes/"><i class="fas fa-sticky-note"></i>Anotações</a>
+        <a href="./lista-task/"><i class="fas fa-check"></i>Tarefas</a>
+        <a href="./lista-projeto/"><i class="fas fa-tasks"></i>Projetos</a>
+      </ul>
+    </div>
+    <main>
+      <div id="annotations">
+        <form id="annotationsForm" (ngSubmit)="salvarTask()">
+            <input type="text" id="titulo" name="titulo" placeholder="Título" [(ngModel)]="titulo" required #tituloInput="ngModel"><br>
+          <div id="dadostarefa">
+            <input type="date" id="data" name="data" [(ngModel)]="data" required #dataInput="ngModel">
+            <input type="checkbox" id="check" name="taskCompleted" [(ngModel)]="taskCompleted" checked required #taskCompletedInput="ngModel">
+            <select id="state" name="statusTarefa" [(ngModel)]="statusTarefa" required>
+              <option value="aberto">Aberto</option>
+              <option value="finalizada">Finalizada</option>
+            </select>
+            <label for="projetos">Selecione um projeto:</label>
+            <select id="projetoSelecionado" (change)="updateProjetoSelecionado($event)" [(ngModel)]="projetoSelecionado" required #projetoSelecionadoInput="ngModel">
+              <option *ngFor="let projeto of projetosDisponiveis" [value]="projeto.id">{{ projeto.titulo }}</option>
+            </select>            
+          </div>
+          <textarea name="descAnnotation" id="descAnnotation" cols="30" rows="6" [(ngModel)]="descAnnotation" required #descAnnotationInput="ngModel"></textarea>
+          <section class="btns">
+            <button type="submit" id="saveAnnotation">Salvar</button>
+            <button id="descartar" (click)="descartarTask()">Cancelar</button>
+          </section>
+        </form>
+      </div>
+    </main>
+
+    <div class="add-button" id="add-button" (click)="toggleDropdown()">
+      <i class="fas fa-plus"></i>
+      <div class="dropdown-content" id="dropdown-content">
+        <a href="./anotacoes"><i class="fas fa-sticky-note"></i>Anotações</a>
+        <a href="./task"><i class="fas fa-check"></i>Tarefas</a>
+        <a href="./projeto"><i class="fas fa-tasks"></i>Projetos</a>
+      </div>
+    </div>
+    
+    <div *ngIf="showOptions" id="add-options" class="add-options">
+      <a href="./anotacoes">Anotações</a>
+      <a href="./task">Tarefas</a>
+      <a href="./projeto">Projetos</a>
+    </div>  
+
+  </body>
+</html>

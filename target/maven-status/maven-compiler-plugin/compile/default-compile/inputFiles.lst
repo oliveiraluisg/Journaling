@@ -1,0 +1,17 @@
+E:\Projetos\journaling\src\main\java\com\br\ifsp\journaling\entities\dto\UserLoginRequest.java
+E:\Projetos\journaling\src\main\java\com\br\ifsp\journaling\service\TokenService.java
+E:\Projetos\journaling\src\main\java\com\br\ifsp\journaling\entities\enums\ResultadoLogin.java
+E:\Projetos\journaling\src\main\java\com\br\ifsp\journaling\repository\TokenRepository.java
+E:\Projetos\journaling\src\main\java\com\br\ifsp\journaling\entities\dto\LembreteRequest.java
+E:\Projetos\journaling\src\main\java\com\br\ifsp\journaling\entities\User.java
+E:\Projetos\journaling\src\main\java\com\br\ifsp\journaling\entities\Lembrete.java
+E:\Projetos\journaling\src\main\java\com\br\ifsp\journaling\JournalingApplication.java
+E:\Projetos\journaling\src\main\java\com\br\ifsp\journaling\repository\UserRepository.java
+E:\Projetos\journaling\src\main\java\com\br\ifsp\journaling\entities\TokenUser.java
+E:\Projetos\journaling\src\main\java\com\br\ifsp\journaling\entities\dto\UserLoginResponse.java
+E:\Projetos\journaling\src\main\java\com\br\ifsp\journaling\controller\LembreteController.java
+E:\Projetos\journaling\src\main\java\com\br\ifsp\journaling\controller\TokenController.java
+E:\Projetos\journaling\src\main\java\com\br\ifsp\journaling\service\UserService.java
+E:\Projetos\journaling\src\main\java\com\br\ifsp\journaling\controller\LoginController.java
+E:\Projetos\journaling\src\main\java\com\br\ifsp\journaling\entities\Token.java
+E:\Projetos\journaling\src\main\java\com\br\ifsp\journaling\repository\TokenUserRepository.java

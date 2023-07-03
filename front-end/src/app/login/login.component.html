@@ -1,0 +1,50 @@
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+	  <form action="#">
+		<h1>Criar conta</h1>
+		<span>Insira suas informações abaixo</span>
+		<input type="text" placeholder="Nome" [(ngModel)]="nome" #emailInput="ngModel" name="nome" required />
+		<input type="email" placeholder="Email" [(ngModel)]="usuario" #emailInput="ngModel" name="email" required />
+		<input type="password" placeholder="Senha" [(ngModel)]="senha" #passwordInput="ngModel" name="password" required />
+		<div *ngIf="statusCriarConta" class="status-box" [style.backgroundColor]="corStatus">{{ statusCriarConta }}</div>
+		<button (click)="enviaRequisicaoCriarConta(nome,usuario,senha)">Criar</button>
+	  </form>
+	</div>
+	<div class="form-container sign-in-container">
+	  <form action="#">
+		<ng-container *ngIf="!mostrarRecuperarSenha" [@slideInOut]="slideState">
+			<h1>Entrar</h1>
+		  <span>Insira sua conta</span>
+		  <input type="email" placeholder="Email" [(ngModel)]="usuario" #emailInput="ngModel" name="email" required />
+		  <input type="password" placeholder="Senha" [(ngModel)]="senha" #passwordInput="ngModel" name="password" required />
+		</ng-container>
+		<ng-container *ngIf="mostrarRecuperarSenha" [@slideInOut]="slideState">
+			<h1>Recuperar senha</h1>
+		  <span>Insira seu e-mail para recuperar sua senha</span>
+		  <input type="email" placeholder="Email" [(ngModel)]="emailRecuperacao" #emailInput="ngModel" name="emailRecuperacao" required />
+		  <input type="password" placeholder="Nova senha"  [(ngModel)]="senhaRecuperacao" #senhaInput="ngModel" name="senhaRecuperacao" required />
+		  <div *ngIf="statusSenha" class="status-box" [style.backgroundColor]="corStatus">{{ statusSenha }}</div>
+		  <button (click)="enviaRequisicaoRecuperarSenha(emailRecuperacao, senhaRecuperacao)">Recuperar</button>
+		</ng-container>
+		<div *ngIf="statusLogin" class="status-box" [style.backgroundColor]="corStatus">{{ statusLogin }}</div>
+		<button (click)="enviaRequisicaoLogin(usuario,senha)" *ngIf="!mostrarRecuperarSenha">Entrar</button>
+		<a href="#" (click)="exibirRecuperarSenha()" *ngIf="!mostrarRecuperarSenha">Esqueceu sua senha?</a>
+		<a href="#" (click)="exibirRecuperarSenha(false)" *ngIf="mostrarRecuperarSenha">Voltar ao login</a>
+	  </form>
+	</div>
+	<div class="overlay-container">
+	  <div class="overlay">
+		<div class="overlay-panel overlay-left">
+		  <h1>Bem-vindo de volta!</h1>
+		  <p>Para continuar conectado, por favor entre com suas informações!</p>
+		  <button class="ghost" id="signIn">Entrar</button>
+		</div>
+		<div class="overlay-panel overlay-right">
+		  <h1>Suas Anotações. {{typingText }}</h1>
+		  <p>Insira suas informações pessoais e crie sua conta!</p>
+		  <button class="ghost" id="signUp">Criar conta</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+  
