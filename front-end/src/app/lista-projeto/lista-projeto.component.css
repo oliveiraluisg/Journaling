@@ -5,7 +5,22 @@
   box-sizing: border-box;
 }
 
+body{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.material-icons{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .menu{
+  position: fixed;
+  top: 20px;
+  left: 0;
   display: flex;
   text-align: center;
   flex-direction: column;
@@ -32,15 +47,6 @@
   padding-right: 10px;
 }
 
-.imgPerfil{
-  background-color: #E0D9D9;
-  width: 200px;
-  height: 200px;
-  border-radius: 100px;
-  margin-top: 30px;
-}
-
-
 h4{
   color: #fff;
 }
@@ -63,25 +69,8 @@ ul a:hover{
   color: black;
 }
 
-body{
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-}
-
-
-.blabla{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 10%;
-  position: fixed;
-  left: 20%;
-  top: 60px;
-}
-
 .blabla img{
-  width: 70%;
+  width: 90%;
 }
 
 .blabla p{
@@ -162,8 +151,8 @@ body{
 }
 
 .projetos h1{
-  margin: 30px 0;
   text-align: left;
+  margin-top: 30px;
 }
 
 .projetos {

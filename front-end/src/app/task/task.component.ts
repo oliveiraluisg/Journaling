@@ -25,6 +25,11 @@ export class TaskComponent {
   projetosDisponiveis!: Projeto[];
   showOptions = false;
   nome!: string;
+  public showMenu = false;
+
+  public toggleMenu(){
+    this.showMenu = !this.showMenu;
+  }
 
   constructor(private http: HttpClient, private timerService: TimerService) { }
 

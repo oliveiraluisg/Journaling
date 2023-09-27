@@ -24,6 +24,10 @@ body{
   flex-direction: row;
 }
 
+.material-icons{
+  cursor: pointer;
+}
+
 .menu{
   display: flex;
   text-align: center;
@@ -32,6 +36,9 @@ body{
   background-color: #000;
   height: 120vh;
   width: 250px;
+  position: fixed;
+  top: 20px;
+  left: 0;
 }
 
 .menu a{
@@ -48,14 +55,6 @@ body{
 
 .menu .opcoesMenu a i{
   padding-right: 10px;
-}
-
-.imgPerfil{
-  background-color: #E0D9D9;
-  width: 200px;
-  height: 200px;
-  border-radius: 100px;
-  margin-top: 30px;
 }
 
 h4{
@@ -113,7 +112,7 @@ textarea{
   font-size: 30px;
   font-weight: 500;
   width: 80%;
-  line-height: 1.5;
+  line-height: 1.1;
 }
 
 .btns{
@@ -162,7 +161,7 @@ textarea{
 .add-button {
   position: fixed;
   right: 20px;
-  bottom: 20px;
+  top: 600px;
   background-color: black;
   color: white;
   width: 50px;

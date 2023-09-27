@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
     <title>Tarefas</title>
   </head>
   <body>
-    <div class="menu">
+    <i class="material-icons" (click)="toggleMenu()">menu</i>
+    <div class="menu" *ngIf="showMenu">
       <div class="imgPerfil">
         <input type="file" id="profilePicInput" style="display: none">
         <label for="profilePicInput">

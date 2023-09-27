@@ -13,6 +13,11 @@ export class ListaProjetoComponent {
   projetos!: Projeto[];
   showOptions = false;
   nome!: string;
+  public showMenu = false;
+
+  public toggleMenu(){
+    this.showMenu = !this.showMenu;
+  }
 
     ngOnInit() {
       this.recuperaProjetos()

@@ -5,17 +5,11 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-  <div class="menu">
-    <div class="imgPerfil">
-      <input type="file" id="profilePicInput" style="display: none">
-      <label for="profilePicInput">
-      <span class="add-photo-btn">
-      <i class="fas fa-plus"></i>
-      </span>
-      </label>
-    </div>
+  <i class="material-icons" (click)="toggleMenu()">menu</i>
+  <div class="menu" *ngIf="showMenu">
     <h4 class="nomeUsuario">{{ nome }}</h4>
     <ul class="opcoesMenu">
       <a href="./calendar"><i class="far fa-calendar-alt"></i>Calendário</a>

@@ -13,6 +13,11 @@ export class CalendarComponent implements OnInit {
   date = new Date();
   daysOfWeek = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'];
   calendar: any[] = [];
+  public showMenu = false;
+
+  public toggleMenu(){
+    this.showMenu = !this.showMenu;
+  }
 
   constructor(private http: HttpClient) { }
 
