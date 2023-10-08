@@ -16,6 +16,16 @@
       </ul>
     </div>
 
+    <div class="menuTelasGrandes">
+      <h4 class="nomeUsuario">{{ nome }}</h4>
+      <ul class="opcoesMenu">
+        <a href="./calendar"><i class="far fa-calendar-alt"></i>Calendário</a>
+        <a href="./lista-anotacoes/"><i class="fas fa-sticky-note"></i>Anotações</a>
+        <a href="./lista-task/"><i class="fas fa-check"></i>Tarefas</a>
+        <a href="./lista-projeto/"><i class="fas fa-tasks"></i>Projetos</a>
+      </ul>
+    </div>
+
     <div id="anotacoes">
       <form #annotationsForm="ngForm" (ngSubmit)="salvarAnotacao()">
         <section>

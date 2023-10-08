@@ -4,6 +4,22 @@
   text-decoration: none;
   box-sizing: border-box;
 }
+
+body{
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: row;
+}
+
+main{
+  margin-top: 5%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 90%;
+}
  
   .menu{
     position: absolute;
@@ -34,14 +50,6 @@
     padding-right: 10px;
   }
 
-  .imgPerfil{
-    background-color: #E0D9D9;
-    width: 200px;
-    height: 200px;
-    border-radius: 100px;
-    margin-top: 30px;
-  }
-
   h4{
     color: #fff;
   }
@@ -64,20 +72,46 @@
     color: black;
   }
 
-  body{
-    width: 100%;
-    height: 100%;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: row;
+  .menuTelasGrandes{
+    display: none;
   }
-
-  main{
-    margin-top: 5%;
-    display: flex;
+  
+  .menuTelasGrandes a{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 350;
+    font-size: 20px;
+    line-height: 28px;
     text-align: center;
-    justify-content: center;
-    width: 90%;
+  }
+  
+  .menuTelasGrandes .nomeUsuario{
+    padding-top: 25px;
+  }
+  
+  .menuTelasGrandes .opcoesMenu a i{
+    padding-right: 10px;
+  }
+  
+  .menuTelasGrandes h4{
+    color: #fff;
+  }
+  
+  .menuTelasGrandes ul{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .menuTelasGrandes ul a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+    padding: 20px 0;
+  }
+  
+  .menuTelasGrandes ul a:hover{
+    background-color: #ffffff;
+    color: black;
   }
 
   #annotations{
@@ -183,7 +217,7 @@
 .add-button {
   position: fixed;
   right: 20px;
-  bottom: 20px;
+  top: 550px;
   background-color: black;
   color: white;
   width: 50px;
@@ -267,4 +301,21 @@
   font-size: 48px;
   line-height: 100px;
   color: #ccc;
+}
+
+
+@media screen and (min-width: 992px){
+  .material-icons{
+    display: none;
+  }
+
+  .menuTelasGrandes{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+    height: 100vh;
+    width: 250px;
+  }
 }

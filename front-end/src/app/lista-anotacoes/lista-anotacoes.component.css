@@ -7,8 +7,10 @@
 
 body{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
+  width: 100%;
+  height: 100%;
 }
 
 .material-icons{
@@ -70,20 +72,59 @@ ul a:hover{
   color: black;
 }
 
-h1{
-  margin: 30px;
+.menuTelasGrandes{
+  display: none;
+}
+
+.menuTelasGrandes a{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 350;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+}
+
+.menuTelasGrandes .nomeUsuario{
+  padding-top: 25px;
+}
+
+.menuTelasGrandes .opcoesMenu a i{
+  padding-right: 10px;
+}
+
+.menuTelasGrandes h4{
+  color: #fff;
+}
+
+.menuTelasGrandes ul{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.menuTelasGrandes ul a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 25px;
+  padding: 20px 0;
+}
+
+.menuTelasGrandes ul a:hover{
+  background-color: #ffffff;
+  color: black;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
 }
 
 .anotacoes {
   width: 80%;
-  margin-left: 50px;
+  align-items: left;
   display: flex;
   flex-direction: column;
-  margin-top: 80px;
-}
-
-.anotacao{
-  margin-bottom: 10px;
+  margin-top: 40px;
 }
 
 .anotacoes h4 {
@@ -109,7 +150,7 @@ h1{
 .add-button {
   position: fixed;
   right: 20px;
-  bottom: 20px;
+  top: 400px;
   background-color: black;
   color: white;
   width: 50px;
@@ -160,7 +201,7 @@ h1{
   display: none;
   position: fixed;
   right: 20px;
-  bottom: 80px;
+  top: 80px;
   background-color: transparent; /* Alterado de #fff para transparent */
   border-radius: 10px;
   padding: 10px;
@@ -179,20 +220,18 @@ h1{
   opacity: 1 !important; 
 }
 
-h1 {
-  position: absolute;
-  left: 20%;
-  top: 0;
-}
-
 
 p{
   font-size: 18px;
 }
 
+.blabla{
+  width: 100%;
+}
+
+
 .blabla img{
-  width: 90%;
-  margin-top: 40px;
+  width: 80%;
 }
 
 .add-photo-btn {
@@ -210,4 +249,25 @@ p{
   line-height: 100px;
   color: #ccc;
 }
-  
+
+@media screen and (min-width: 992px){
+  .material-icons{
+    display: none;
+  }
+
+  .menuTelasGrandes{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+    height: 100vh;
+    width: 250px;
+  }
+
+  .add-button{
+    position: fixed;
+    right: 20px;
+    top: 620px;
+  }
+}

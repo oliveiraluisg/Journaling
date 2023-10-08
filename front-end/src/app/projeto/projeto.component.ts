@@ -20,6 +20,10 @@ export class ProjetoComponent {
   public toggleMenu(){
     this.showMenu = !this.showMenu;
   }
+
+  closeProjeto() : void{
+    location.reload();
+  }
   
   ngOnInit() {
     this.recuperaNomeUsuario();
