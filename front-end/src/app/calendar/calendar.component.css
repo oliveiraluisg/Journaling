@@ -119,7 +119,7 @@ ul a:hover{
   width: 100%;
   height: 100%;
   max-width: 1300px;
-  margin: 10%;
+  margin-top: 5%;
   font-family: Arial, sans-serif; 
   padding-top: 5px;
 }
@@ -166,7 +166,7 @@ ul a:hover{
 .date {
   text-align: center;
   flex: 1 1 calc(100% / 7);
-  padding: 50px;
+  padding: 25px 10px;
 }
 
 .date.today {
@@ -268,7 +268,7 @@ ul a:hover{
   color: #ccc;
 }
 
-@media screen and (min-width: 1220px){
+@media screen and (min-width: 1024px){
   .material-icons{
     display: none;
   }
@@ -280,7 +280,11 @@ ul a:hover{
     align-items: center;
     background-color: #000;
     height: 100vh;
-    width: 355px;
+    width: 300px;
+  }
+
+  .date{
+    padding: 50px 25px;
   }
 }
 
