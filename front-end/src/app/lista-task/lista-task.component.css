@@ -115,6 +115,8 @@ ul a:hover{
 main{
   display: flex;
   flex-direction: column;
+  justify-content: right;
+  width: 100%;
 }
 
 .blabla{
@@ -128,7 +130,7 @@ main{
 .add-button {
   position: fixed;
   right: 20px;
-  top: 400px;
+  top: 600px;
   background-color: black;
   color: white;
   width: 50px;
@@ -201,7 +203,8 @@ main{
 .tarefas {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
+  align-items: center;
 }
 
 .tarefas h1{
