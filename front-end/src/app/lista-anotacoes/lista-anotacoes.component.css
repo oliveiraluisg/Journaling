@@ -267,9 +267,17 @@ p{
     background-color: #000;
     height: 100vh;
     width: 250px;
+    position: fixed;
   }
 
   main{
+    width: 80%;
+    margin-left: 251px;
+    display: flex;
+    align-items: center;
+  }
+
+  .blabla{
     width: 80%;
   }
 
