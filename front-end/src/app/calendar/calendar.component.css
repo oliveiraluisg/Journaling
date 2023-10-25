@@ -13,13 +13,13 @@ body {
 
 .material-icons{
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
 }
 
 .menu{
-  position: absolute;
+  position: fixed;
   top: 20px;
   left: 0;
   display: flex;
@@ -28,7 +28,7 @@ body {
   align-items: center;
   background-color: #000;
   height: 152%;
-  width: 250px;
+  width: 210px;
 }
 
 .menu a{
@@ -122,6 +122,7 @@ ul a:hover{
   margin-top: 5%;
   font-family: Arial, sans-serif; 
   padding-top: 5px;
+  align-items: center;
 }
 
 .header {
@@ -148,6 +149,7 @@ ul a:hover{
 .days-of-week {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+  width: 100%;
 }
 
 .day-of-week {
@@ -161,6 +163,7 @@ ul a:hover{
   grid-template-rows: repeat(6, 1fr);
   background-color: #fff;
   font-weight: lighter;
+  width: 100%;
 }
 
 .date {
@@ -280,7 +283,12 @@ ul a:hover{
     align-items: center;
     background-color: #000;
     height: 100vh;
-    width: 300px;
+    width: 210px;
+    position: fixed;
+  }
+
+  .calendar{
+    margin-left: 211px;
   }
 
   .date{

@@ -29,7 +29,7 @@ body{
   align-items: center;
   background-color: #000;
   height: 100vh;
-  width: 250px;
+  width: 210px;
 }
 
 .menu a{
@@ -216,12 +216,12 @@ main{
 }
 
 .tarefas h4 {
-  color: black;
+  color: black; 
 }
 
 .tarefas .tarefa{
   background-color: #f4f4f4;
-  width: 95%;
+  width: 85%;   
   text-align: left;
 }
 
@@ -267,7 +267,12 @@ p{
     align-items: center;
     background-color: #000;
     height: 100vh;
-    width: 250px;
+    width: 210px;
+    position: fixed;
+  }
+
+  main{
+    margin-left: 211px;
   }
 
   .add-button{
