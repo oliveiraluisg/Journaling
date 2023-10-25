@@ -141,8 +141,16 @@ export class CalendarComponent implements OnInit {
     const today = new Date();
     return date.getFullYear() === today.getFullYear() && date.getMonth() === today.getMonth() && date.getDate() === today.getDate();
   }
+
+  logout() {
+
+    localStorage.removeItem('idUsuario'); 
+  
+    window.location.href = '/'; 
+  } 
 }
 
 interface UserReturnResponse{
   nome: string;
 }
+
