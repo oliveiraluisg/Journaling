@@ -23,6 +23,11 @@ export class AnotacoesComponent {
   token: string = "";
   nome!: string;
   showOptions = false;
+  public showMenu = false;
+
+  public toggleMenu(){
+    this.showMenu = !this.showMenu;
+  }
 
 
   @ViewChild('annotationsForm', { static: true }) annotationsForm!: ElementRef;

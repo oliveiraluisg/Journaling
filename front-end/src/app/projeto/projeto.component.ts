@@ -15,6 +15,15 @@ export class ProjetoComponent {
   baseUrlProjeto = "http://localhost:8080/api/v1/projeto"
   showOptions = false;
   nome!: string;
+  public showMenu = false;
+
+  public toggleMenu(){
+    this.showMenu = !this.showMenu;
+  }
+
+  closeProjeto() : void{
+    location.reload();
+  }
   
   ngOnInit() {
     this.recuperaNomeUsuario();

@@ -162,6 +162,16 @@ export class LoginComponent implements OnInit{
 
   }
 
+  botaoCriarHabilitado: boolean = false;
+
+  checkCamposPreenchidos() {
+    if (this.nome && this.usuario && this.senha) {
+      this.botaoCriarHabilitado = true;
+    } else {
+      this.botaoCriarHabilitado = false;
+    }
+  }
+
   enviaRequisicaoCriarConta(nome: string, login: string, senha: string){
 
     const url = 'http://localhost:8080/api/v1/user/create?token=' + this.token;

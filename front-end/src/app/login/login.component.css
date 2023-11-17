@@ -148,8 +148,8 @@ input {
 }
 
 .overlay-container {
-	position: absolute;
-	top: 0;
+	position: absolute; 
+	top: 0; 
 	left: 50%;
 	width: 50%;
 	height: 100%;
@@ -286,4 +286,24 @@ footer a {
 
   .form-content.slide-up {
 	transform: translateY(-100%);
+  }
+
+  @media screen and (max-width: 420px){
+	.container{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.sign-in-container{
+		width: 100%;
+	}
+
+	.sign-up-container{
+		width: 100%;
+	}
+
+	.overlay-container{
+		position: static;
+		width: 100%;
+	}
   }

@@ -14,6 +14,11 @@ export class ListaAnotacoesComponent implements OnInit{
   showOptions = false;
   nome!: string;
   lembretes!: Lembrete[];
+  public showMenu = false;
+
+  public toggleMenu(){
+    this.showMenu = !this.showMenu;
+  }
   
   constructor(private http: HttpClient) { }
 

@@ -3,11 +3,11 @@
 	  <form action="#">
 		<h1>Criar conta</h1>
 		<span>Insira suas informações abaixo</span>
-		<input type="text" placeholder="Nome" [(ngModel)]="nome" #emailInput="ngModel" name="nome" required />
-		<input type="email" placeholder="Email" [(ngModel)]="usuario" #emailInput="ngModel" name="email" required />
-		<input type="password" placeholder="Senha" [(ngModel)]="senha" #passwordInput="ngModel" name="password" required />
+		<input type="text" placeholder="Nome" [(ngModel)]="nome" name="nome" (ngModelChange)="checkCamposPreenchidos()" required />
+		<input type="email" placeholder="Email" [(ngModel)]="usuario" name="email" (ngModelChange)="checkCamposPreenchidos()" required />
+		<input type="password" placeholder="Senha" [(ngModel)]="senha" name="senha" (ngModelChange)="checkCamposPreenchidos()" required />
 		<div *ngIf="statusCriarConta" class="status-box" [style.backgroundColor]="corStatus">{{ statusCriarConta }}</div>
-		<button (click)="enviaRequisicaoCriarConta(nome,usuario,senha)">Criar</button>
+		<button (click)="enviaRequisicaoCriarConta(nome, usuario, senha)" [disabled]="!botaoCriarHabilitado">Criar</button>
 	  </form>
 	</div>
 	<div class="form-container sign-in-container">

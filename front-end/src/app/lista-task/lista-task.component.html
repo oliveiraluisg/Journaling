@@ -5,17 +5,11 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-  <div class="menu">
-    <div class="imgPerfil">
-      <input type="file" id="profilePicInput" style="display: none">
-      <label for="profilePicInput">
-      <span class="add-photo-btn">
-      <i class="fas fa-plus"></i>
-      </span>
-      </label>
-    </div>
+  <i class="material-icons" (click)="toggleMenu()">menu</i>
+  <div class="menu" *ngIf="showMenu">
     <h4 class="nomeUsuario">{{ nome }}</h4>
     <ul class="opcoesMenu">
       <a href="./calendar"><i class="far fa-calendar-alt"></i>Calendário</a>
@@ -25,38 +19,50 @@
     </ul>
   </div>
 
-  <div class="blabla" *ngIf="!tarefas || tarefas.length === 0">
-    <img src="../../assets/imgtelaprojeto.png" alt="">
-    <p>Você ainda não possui anotações</p>
+  <div class="menuTelasGrandes">
+    <h4 class="nomeUsuario">{{ nome }}</h4>
+    <ul class="opcoesMenu">
+      <a href="./calendar"><i class="far fa-calendar-alt"></i>Calendário</a>
+      <a href="./lista-anotacoes/"><i class="fas fa-sticky-note"></i>Anotações</a>
+      <a href="./lista-task/"><i class="fas fa-check"></i>Tarefas</a>
+      <a href="./lista-projeto/"><i class="fas fa-tasks"></i>Projetos</a>
+    </ul>
   </div>
-  
-  <div class="tarefas">
-    <h1>Tarefas</h1>
-    <div class="tarefa" *ngFor="let tarefa of tarefas">
-      <input type="radio" name="tarefa" id="{{tarefa.id}}">
-      <h2>{{ tarefa.titulo }}</h2>
-      <h4>{{ tarefa.dataCriacao }}</h4>
-      <div class="botoes">
-        <i class="far fa-edit"></i>
-        <i class="far fa-trash-alt"></i>
+
+  <main>  
+    
+    <div class="tarefas">
+      <h1>Tarefas</h1>
+      <div class="tarefa" *ngFor="let tarefa of tarefas">
+        <input type="radio" name="tarefa" id="{{tarefa.id}}">
+        <h2>{{ tarefa.titulo }}</h2>
+        <h4>{{ tarefa.dataCriacao }}</h4>
+        <div class="botoes">
+          <i class="far fa-edit"></i>
+          <i class="far fa-trash-alt"></i>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="add-button" id="add-button" (click)="toggleDropdown()">
-    <i class="fas fa-plus"></i>
-    <div class="dropdown-content" id="dropdown-content">
-      <a href="./anotacoes"><i class="fas fa-sticky-note"></i>Anotações</a>
-      <a href="./task"><i class="fas fa-check"></i>Tarefas</a>
-      <a href="./projeto"><i class="fas fa-tasks"></i>Projetos</a>
+    <div class="blabla" *ngIf="!tarefas || tarefas.length === 0">
+      <img src="../../assets/imgtelaprojeto.png" alt="">
+      <p>Você ainda não possui tarefas</p>
     </div>
-  </div>
-  
-  <div *ngIf="showOptions" id="add-options" class="add-options">
-    <a href="./anotacoes">Anotações</a>
-    <a href="./task">Tarefas</a>
-    <a href="./projeto">Projetos</a>
-  </div>  
 
+    <div class="add-button" id="add-button" (click)="toggleDropdown()">
+      <i class="fas fa-plus"></i>
+      <div class="dropdown-content" id="dropdown-content">
+        <a href="./anotacoes"><i class="fas fa-sticky-note"></i>Anotações</a>
+        <a href="./task"><i class="fas fa-check"></i>Tarefas</a>
+        <a href="./projeto"><i class="fas fa-tasks"></i>Projetos</a>
+      </div>
+    </div>
+    
+    <div *ngIf="showOptions" id="add-options" class="add-options">
+      <a href="./anotacoes">Anotações</a>
+      <a href="./task">Tarefas</a>
+      <a href="./projeto">Projetos</a>
+    </div>  
+  </main>
 </body>
 </html>

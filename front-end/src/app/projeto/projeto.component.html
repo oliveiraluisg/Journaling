@@ -6,18 +6,12 @@
   <title>Projetos</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
 </head>
 
 <body>
-  <div class="menu">
-    <div class="imgPerfil">
-      <input type="file" id="profilePicInput" style="display: none">
-      <label for="profilePicInput">
-      <span class="add-photo-btn">
-      <i class="fas fa-plus"></i>
-      </span>
-      </label>
-    </div>
+  <i class="material-icons" (click)="toggleMenu()">menu</i>
+  <div class="menu" *ngIf="showMenu">
     <h4 class="nomeUsuario">{{ nome }}</h4>
     <ul class="opcoesMenu">
       <a href="./calendar"><i class="far fa-calendar-alt"></i>Calendário</a>
@@ -26,17 +20,30 @@
       <a href="./lista-projeto/"><i class="fas fa-tasks"></i>Projetos</a>
     </ul>
   </div>
+
+  <div class="menuTelasGrandes">
+    <h4 class="nomeUsuario">{{ nome }}</h4>
+    <ul class="opcoesMenu">
+      <a href="./calendar"><i class="far fa-calendar-alt"></i>Calendário</a>
+      <a href="./lista-anotacoes/"><i class="fas fa-sticky-note"></i>Anotações</a>
+      <a href="./lista-task/"><i class="fas fa-check"></i>Tarefas</a>
+      <a href="./lista-projeto/"><i class="fas fa-tasks"></i>Projetos</a>
+    </ul>
+  </div>
+
   <div class="projeto">
     <form method="POST" onSubmit="criaProjeto()">
-      <input type="text" name="nomeprojeto" id="nomeProjeto" placeholder="Nome do Projeto" maxlength="60" [(ngModel)]="nomeProjeto" required #nomeProjetoInput="ngModel"><br>
+      <input type="text" name="nomeprojeto" id="nomeProjeto" placeholder="Nome do Projeto" maxlength="60" [(ngModel)]="nomeProjeto" required #nomeProjetoInput="ngModel">
       <div class="datas">
         <input type="text" name="datainicio" id="dataInicio" [(ngModel)]="dataInicioProjeto" required #dataInicioProjetoInput="ngModel" placeholder="Data de Início" onfocus="(this.type='date')" onblur="(this.type='text')" onsubmit="(this.type='date')">
         <input type="text" name="datafim" id="dataFim" placeholder="Data de Término" [(ngModel)]="dataTerminoProjeto" required #dataTerminoProjetoInput="ngModel" onfocus="(this.type='date')" onblur="(this.type='text')" onsubmit="(this.type='date')">
       </div>
       <h3>Descrição</h3>
-      <textarea name="descricao" id="descricao" [(ngModel)]="descricaoProjeto" required #descricaoProjetoInput="ngModel" cols="30" rows="3"></textarea><br>
-      <input type="submit" value="Salvar" id="botaocriar" (click)="criaProjeto()">
-      <a href="./projeto"><input type="button" value="Cancelar" id="botaocancelar"></a>
+      <textarea name="descricao" id="descricao" [(ngModel)]="descricaoProjeto" required #descricaoProjetoInput="ngModel" cols="30" rows="3"></textarea>
+      <div class="btns">
+        <input type="submit" value="Salvar" id="botaocriar" (click)="criaProjeto()">
+        <div id="descartar" (click)="closeProjeto()">Cancelar</div>
+      </div>
     </form>
   </div>
 

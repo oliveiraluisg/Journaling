@@ -11,15 +11,24 @@ body {
   align-items: center;
 }
 
+.material-icons{
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 .menu{
+  position: fixed;
+  top: 20px;
+  left: 0;
   display: flex;
   text-align: center;
   flex-direction: column;
   align-items: center;
   background-color: #000;
   height: 152%;
-  width: 385px;
-  padding-top: 150px;
+  width: 210px;
 }
 
 .menu a{
@@ -36,14 +45,6 @@ body {
 
 .menu .opcoesMenu a i{
   padding-right: 10px;
-}
-
-.imgPerfil{
-  background-color: #E0D9D9;
-  width: 200px;
-  height: 200px;
-  border-radius: 100px;
-  margin-top: 30px;
 }
 
 h4{
@@ -68,6 +69,48 @@ ul a:hover{
   color: black;
 }
 
+.menuTelasGrandes{
+  display: none;
+}
+
+.menuTelasGrandes a{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 350;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+}
+
+.menuTelasGrandes .nomeUsuario{
+  padding-top: 25px;
+}
+
+.menuTelasGrandes .opcoesMenu a i{
+  padding-right: 10px;
+}
+
+.menuTelasGrandes h4{
+  color: #fff;
+}
+
+.menuTelasGrandes ul{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.menuTelasGrandes ul a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 25px;
+  padding: 20px 0;
+}
+
+.menuTelasGrandes ul a:hover{
+  background-color: #ffffff;
+  color: black;
+}
+
 
 .calendar {
   display: flex;
@@ -76,9 +119,10 @@ ul a:hover{
   width: 100%;
   height: 100%;
   max-width: 1300px;
-  margin: 10%;
+  margin-top: 5%;
   font-family: Arial, sans-serif; 
   padding-top: 5px;
+  align-items: center;
 }
 
 .header {
@@ -105,6 +149,7 @@ ul a:hover{
 .days-of-week {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+  width: 100%;
 }
 
 .day-of-week {
@@ -118,12 +163,13 @@ ul a:hover{
   grid-template-rows: repeat(6, 1fr);
   background-color: #fff;
   font-weight: lighter;
+  width: 100%;
 }
 
 .date {
   text-align: center;
   flex: 1 1 calc(100% / 7);
-  padding: 50px;
+  padding: 25px 10px;
 }
 
 .date.today {
@@ -223,6 +269,31 @@ ul a:hover{
   font-size: 48px;
   line-height: 100px;
   color: #ccc;
+}
+
+@media screen and (min-width: 1024px){
+  .material-icons{
+    display: none;
+  }
+
+  .menuTelasGrandes{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+    height: 100vh;
+    width: 210px;
+    position: fixed;
+  }
+
+  .calendar{
+    margin-left: 211px;
+  }
+
+  .date{
+    padding: 50px 25px;
+  }
 }
 
 

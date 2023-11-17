@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
 import { EsqueceuSenhaComponent } from './esqueceu-senha/esqueceu-senha.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from 'src/app-routing.module';
-import { CriaUsuarioComponent } from './cria-usuario/cria-usuario.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -27,7 +26,6 @@ import { ProjetoComponent } from './projeto/projeto.component';
     AppComponent,
     LoginComponent,
     EsqueceuSenhaComponent,
-    CriaUsuarioComponent,
     AnotacoesComponent,
     CalendarComponent,
     TaskComponent,

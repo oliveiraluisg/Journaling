@@ -13,6 +13,11 @@ export class ListaTaskComponent implements OnInit{
   showOptions = false;
   nome!: string;
   tarefas!: Tarefa[];
+  public showMenu = false;
+
+  public toggleMenu(){
+    this.showMenu = !this.showMenu;
+  }
 
   constructor(private http: HttpClient) { }
 
