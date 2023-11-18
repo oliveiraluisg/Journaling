@@ -29,6 +29,13 @@ export class ProjetoComponent {
     this.recuperaNomeUsuario();
   }
 
+  logout() {
+
+    localStorage.removeItem('idUsuario'); 
+  
+    window.location.href = '/'; 
+  } 
+
   criaProjeto(){
 
     const url = this.baseUrlProjeto + '?idUsuario=' + localStorage.getItem('idUsuario')

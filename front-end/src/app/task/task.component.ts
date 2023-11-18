@@ -76,14 +76,12 @@ export class TaskComponent {
     this.projetoSelecionado = parseInt((<HTMLSelectElement>event.target).value, 10);
   }
   
+  logout() {
 
-  abrirTask(): void {
-
-  }
-
-  fecharTask(): void {
-    // Lógica para fechar a tarefa
-  }
+    localStorage.removeItem('idUsuario'); 
+  
+    window.location.href = '/'; 
+  } 
 
   ngOnInit() {
     this.buscaProjetos();

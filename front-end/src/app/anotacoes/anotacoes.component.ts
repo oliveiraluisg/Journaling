@@ -101,6 +101,13 @@ export class AnotacoesComponent {
     this.showOptions = !this.showOptions;
   }
 
+  logout() {
+
+    localStorage.removeItem('idUsuario'); 
+  
+    window.location.href = '/'; 
+  } 
+
   fecharAnotacao(): void {
 
   }
