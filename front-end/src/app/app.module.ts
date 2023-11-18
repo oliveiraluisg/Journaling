@@ -20,6 +20,7 @@ import { ListaAnotacoesComponent } from './lista-anotacoes/lista-anotacoes.compo
 import { ListaTaskComponent } from './lista-task/lista-task.component';
 import { ListaProjetoComponent } from './lista-projeto/lista-projeto.component';
 import { ProjetoComponent } from './projeto/projeto.component';
+import { CadastroComponent } from './cadastro/cadastro.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ProjetoComponent } from './projeto/projeto.component';
     ListaTaskComponent,
     ListaProjetoComponent,
     ProjetoComponent,
+    CadastroComponent,
   ],
   imports: [
     BrowserModule,

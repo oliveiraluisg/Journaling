@@ -9,6 +9,7 @@ import { ProjetoComponent } from './app/projeto/projeto.component';
 import { ListaProjetoComponent } from './app/lista-projeto/lista-projeto.component';
 import { ListaAnotacoesComponent } from './app/lista-anotacoes/lista-anotacoes.component';
 import { ListaTaskComponent } from './app/lista-task/lista-task.component';
+import { CadastroComponent } from './app/cadastro/cadastro.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -19,7 +20,7 @@ const routes: Routes = [
   { path: 'lista-projeto', component: ListaProjetoComponent},
   { path: 'lista-anotacoes', component: ListaAnotacoesComponent},
   { path: 'lista-task', component: ListaTaskComponent},
-
+  { path: 'cadastro', component: CadastroComponent},
 ];
 
 @NgModule({
