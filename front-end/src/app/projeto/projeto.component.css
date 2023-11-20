@@ -27,7 +27,7 @@ body{
   align-items: center;
   background-color: #000;
   height: 120vh;
-  width: 250px;
+  width: 210px;
 }
 
 .menu a{
@@ -108,6 +108,12 @@ ul a:hover{
 .menuTelasGrandes ul a:hover{
   background-color: #ffffff;
   color: black;
+}
+
+.logout{
+  width: 100%;
+  align-self: center;
+  cursor: pointer;
 }
 
 .projeto{
@@ -308,7 +314,7 @@ ul a:hover{
     align-items: center;
     background-color: #000;
     height: 100vh;
-    width: 250px;
+    width: 210px;
   }
 
   #dataInicio, #dataFim{

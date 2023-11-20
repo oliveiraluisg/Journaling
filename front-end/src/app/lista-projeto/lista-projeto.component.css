@@ -20,13 +20,14 @@ body{
 }
 
 .menu{
-  position: fixed;
+  position: absolute;
   top: 20px;
   left: 0;
   display: flex;
   text-align: center;
   flex-direction: column;
   align-items: center;
+  align-content: center;
   background-color: #000;
   height: 100vh;
   width: 210px;
@@ -38,7 +39,7 @@ body{
   font-size: 20px;
   line-height: 30px;
   text-align: center;
-  width: 250px;
+  width: 100%;
 }
 
 .menu .nomeUsuario{
@@ -56,7 +57,7 @@ h4{
 ul{
   display: flex;
   flex-direction: column;
-  width: 120%;
+  width: 100%;
 }
 
 ul a{
@@ -111,6 +112,12 @@ ul a:hover{
 .menuTelasGrandes ul a:hover{
   background-color: #ffffff;
   color: black;
+}
+
+.logout{
+  width: 100%;
+  align-self: center;
+  cursor: pointer;
 }
 
 main{
@@ -212,10 +219,6 @@ main{
 
 }
 
-.projeto{
-  margin-bottom: 10px;
-}
-
 .projetos h4 {
   color: black;
 }
@@ -276,6 +279,11 @@ main{
     position: fixed;
     right: 20px;
     top: 600px;
+  }
+
+  .blabla{
+    width: 80%;
+    align-self: center;
   }
 }
 

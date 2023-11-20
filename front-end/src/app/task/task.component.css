@@ -31,7 +31,7 @@ main{
     align-items: center;
     background-color: #000;
     height: 100vh;
-    width: 250px;
+    width: 210px;
   }
 
   .menu a{
@@ -57,7 +57,7 @@ main{
   ul{
     display: flex;
     flex-direction: column;
-    width: 120%;
+    width: 100%;
   }
 
   ul a{
@@ -112,6 +112,12 @@ main{
   .menuTelasGrandes ul a:hover{
     background-color: #ffffff;
     color: black;
+  }
+
+  .logout{
+    width: 100%;
+    align-self: center;
+    cursor: pointer;
   }
 
   #annotations{
@@ -316,6 +322,6 @@ main{
     align-items: center;
     background-color: #000;
     height: 100vh;
-    width: 250px;
+    width: 210px;
   }
 }

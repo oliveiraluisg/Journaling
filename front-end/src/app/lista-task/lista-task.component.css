@@ -112,6 +112,12 @@ ul a:hover{
   color: black;
 }
 
+.logout{
+  width: 100%;
+  align-self: center;
+  cursor: pointer;
+}
+
 main{
   display: flex;
   flex-direction: column;
@@ -279,5 +285,10 @@ p{
     position: fixed;
     right: 20px;
     top: 620px;
+  }
+
+  .blabla{
+    width: 80%;
+    align-self: center;
   }
 }
