@@ -35,7 +35,7 @@ body{
   align-items: center;
   background-color: #000;
   height: 100vh;
-  width: 250px;
+  width: 210px;
   position: fixed;
   top: 20px;
   left: 0;
@@ -119,6 +119,12 @@ ul a:hover{
 .menuTelasGrandes ul a:hover{
   background-color: #ffffff;
   color: black;
+}
+
+.logout{
+  width: 100%;
+  align-self: center;
+  cursor: pointer;
 }
 
 #anotacoes{
@@ -301,6 +307,6 @@ textarea{
     align-items: center;
     background-color: #000;
     height: 100vh;
-    width: 250px;
+    width: 210px;
   }
 }

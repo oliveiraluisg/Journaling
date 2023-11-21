@@ -38,6 +38,13 @@ export class ListaAnotacoesComponent implements OnInit{
     this.showOptions = !this.showOptions;
   }
 
+  logout() {
+
+    localStorage.removeItem('idUsuario'); 
+  
+    window.location.href = '/'; 
+  } 
+
   recuperaNomeUsuario(): void {
 
     const idUsuario = localStorage.getItem('idUsuario');

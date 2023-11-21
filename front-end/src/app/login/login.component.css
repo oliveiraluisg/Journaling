@@ -65,9 +65,12 @@ button:focus {
 	outline: none;
 }
 
-button.ghost {
-	background-color: transparent;
-	border-color: #FFFFFF;
+.ghost{
+	border-color: solid 1px #FFFFFF;
+	background-color: #fff;
+	color: #000;
+	padding: 8px 40px;
+	border-radius: 50px;
 }
 
 form {
