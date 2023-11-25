@@ -105,7 +105,7 @@ ul a:hover{
   padding: 20px 0;
 }
 
-.menuTelasGrandes ul a:hover{
+.menuTelasGrandes ul a:hover, .logout:hover{
   background-color: #ffffff;
   color: black;
 }
@@ -114,6 +114,11 @@ ul a:hover{
   width: 100%;
   align-self: center;
   cursor: pointer;
+  font-size: 25px;
+  padding: 20px 0;
+  color: #fff;
+  background-color: #000;
+  border: none;
 }
 
 .projeto{
