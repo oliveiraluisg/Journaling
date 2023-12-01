@@ -82,10 +82,12 @@ export class AnotacoesComponent {
     this.http.post(this.baseUrl, LembreteRequest, { headers }).subscribe(
       response => {
         console.log('Anotação salva com sucesso!');
+        window.alert("Anotação salva com sucesso!");
         location.reload();
       },
       error => {
         console.log('Erro ao salvar anotação:', error);
+        window.alert("Preencha todos os campos");
       }
     );
   }

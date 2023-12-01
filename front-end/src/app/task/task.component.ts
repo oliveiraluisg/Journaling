@@ -49,10 +49,12 @@ export class TaskComponent {
     this.http.post(this.baseUrl, Tarefa, { headers }).subscribe(
       response => {
         console.log('Tarefa salva com sucesso!');
+        window.alert("Tarefa salva com sucesso!");
         location.reload();
       },
       error => {
         console.log('Erro ao salvar tarefa:', error);
+        window.alert("É preciso associar a tarefa a um projeto");
       }
     );
   }

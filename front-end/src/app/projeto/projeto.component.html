@@ -34,20 +34,25 @@
   </div>
 
   <div class="projeto">
-    <form method="POST" onSubmit="criaProjeto()">
-      <input type="text" name="nomeprojeto" id="nomeProjeto" placeholder="Nome do Projeto" maxlength="60" [(ngModel)]="nomeProjeto" required #nomeProjetoInput="ngModel">
+    <form #projetoForm="ngForm" (ngSubmit)="criaProjeto()">
+      <input type="text" name="nomeprojeto" id="nomeProjeto" placeholder="Nome do Projeto" maxlength="60"
+        [(ngModel)]="nomeProjeto" required #nomeProjetoInput="ngModel">
       <div class="datas">
-        <input type="text" name="datainicio" id="dataInicio" [(ngModel)]="dataInicioProjeto" required #dataInicioProjetoInput="ngModel" placeholder="Data de Início" onfocus="(this.type='date')" onblur="(this.type='text')" onsubmit="(this.type='date')">
-        <input type="text" name="datafim" id="dataFim" placeholder="Data de Término" [(ngModel)]="dataTerminoProjeto" required #dataTerminoProjetoInput="ngModel" onfocus="(this.type='date')" onblur="(this.type='text')" onsubmit="(this.type='date')">
+        <input type="date" name="datainicio" id="dataInicio" [(ngModel)]="dataInicioProjeto" required
+          #dataInicioProjetoInput="ngModel">
+        <input type="date" name="datafim" id="dataFim" placeholder="Data de Término" [(ngModel)]="dataTerminoProjeto"
+          required #dataTerminoProjetoInput="ngModel">
       </div>
       <h3>Descrição</h3>
-      <textarea name="descricao" id="descricao" [(ngModel)]="descricaoProjeto" required #descricaoProjetoInput="ngModel" cols="30" rows="3"></textarea>
+      <textarea name="descricao" id="descricao" [(ngModel)]="descricaoProjeto" required #descricaoProjetoInput="ngModel"
+        cols="30" rows="3"></textarea>
       <div class="btns">
-        <input type="submit" value="Salvar" id="botaocriar" (click)="criaProjeto()">
+        <button type="submit" id="botaocriar" [disabled]="projetoForm.invalid">Salvar</button>
         <div id="descartar" (click)="closeProjeto()">Cancelar</div>
       </div>
     </form>
   </div>
+  
 
   <div class="add-button" id="add-button" (click)="toggleDropdown()">
     <i class="fas fa-plus"></i>
