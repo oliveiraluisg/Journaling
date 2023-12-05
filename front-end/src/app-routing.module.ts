@@ -1,7 +1,6 @@
 import { TaskComponent } from './app/task/task.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EsqueceuSenhaComponent } from './app/esqueceu-senha/esqueceu-senha.component';
 import { LoginComponent } from './app/login/login.component';
 import { AnotacoesComponent } from './app/anotacoes/anotacoes.component';
 import { CalendarComponent } from './app/calendar/calendar.component';

@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { TimerService } from 'src/service/TimerService';
 import { FormsModule } from '@angular/forms';
-import { EsqueceuSenhaComponent } from './esqueceu-senha/esqueceu-senha.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from 'src/app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,7 +25,6 @@ import { CadastroComponent } from './cadastro/cadastro.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    EsqueceuSenhaComponent,
     AnotacoesComponent,
     CalendarComponent,
     TaskComponent,
