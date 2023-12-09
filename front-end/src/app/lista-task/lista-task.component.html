@@ -36,7 +36,7 @@
     <div class="tarefas">
       <h1>Tarefas</h1>
       <div class="tarefa" *ngFor="let tarefa of tarefas">
-        <input type="radio" name="tarefa" id="{{tarefa.id}}">
+        <input type="checkbox" name="tarefa" id="{{tarefa.id}}">
         <h2>{{ tarefa.titulo }}</h2>
         <h4>{{ tarefa.dataCriacao }}</h4>
         <div class="botoes">

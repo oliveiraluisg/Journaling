@@ -35,7 +35,7 @@
     <main>
       <div id="annotations">
         <form id="annotationsForm" (ngSubmit)="salvarTask()">
-            <input type="text" id="titulo" name="titulo" placeholder="Título" [(ngModel)]="titulo" required #tituloInput="ngModel"><br>
+            <input type="text" id="titulo" name="titulo" placeholder="Título da tarefa" [(ngModel)]="titulo" required #tituloInput="ngModel"><br>
           <div id="dadostarefa">
             <input type="date" id="data" name="data" [(ngModel)]="data" required #dataInput="ngModel">
             <input type="checkbox" id="check" name="taskCompleted" [(ngModel)]="taskCompleted" checked required #taskCompletedInput="ngModel">
