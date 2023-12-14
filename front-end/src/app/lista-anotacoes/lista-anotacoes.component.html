@@ -39,7 +39,7 @@
         <h2>{{ lembrete.anotacao }}</h2>
         <h4>{{ lembrete.descricao }}</h4>
         <div class="botoes">
-          <i class="far fa-edit"></i>
+          <button class="far fa-edit" (click)="deleteLembretes"></button>
           <button class="far fa-trash-alt" (click)="deleteLembretes"></button>
         </div>
       </div>

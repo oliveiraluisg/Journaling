@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -83,26 +84,28 @@ export class ListaAnotacoesComponent implements OnInit{
   }
 
 
-  deleteLembretes(lembrete: Lembrete): void{
-
-
-    const url = 'http://localhost:8080/api/v1/lembrete';
+  deleteLembretes(lembrete: Lembrete): void {
+    const url = `http://localhost:8080/api/v1/lembrete/${lembrete.Id}`;
   
-    this.http.delete<Lembrete[]>(url, {
-      headers: {
-        'idLembrete' : lembrete.Id,
+    const httpOptions = {
+      headers: new HttpHeaders({
         'Content-Type': 'application/json',
-      }
-      
-    }).pipe(
-      catchError((error) => {
-        console.error('Error fetching lembretes', error);
-        return throwError(error);
       })
-    ).subscribe(resposta => {
-      this.lembretes = resposta;
-    });
+    };
+  
+    this.http.delete(url, httpOptions)
+      .pipe(
+        catchError((error) => {
+          console.error('Error deleting lembrete', error);
+          return throwError(error);
+        })
+      )
+      .subscribe(() => {
+        this.lembretes = this.lembretes.filter(l => l.Id !== lembrete.Id);
+      });
   }
+  
+   
 
 }
 

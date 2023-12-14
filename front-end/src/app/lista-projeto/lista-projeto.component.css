@@ -232,6 +232,7 @@ main{
   background-color: #f4f4f4;
   width: 95%;
   text-align: left;
+  margin-bottom: 10px;
 }
 
 .projeto .botoes {
@@ -289,6 +290,13 @@ main{
   .blabla{
     width: 80%;
     align-self: center;
+  }
+
+  .projetos {
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+  
   }
 }
 
