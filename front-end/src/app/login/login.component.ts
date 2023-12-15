@@ -172,59 +172,6 @@ export class LoginComponent implements OnInit{
     }
   }
 
-  enviaRequisicaoCriarConta(nome: string, login: string, senha: string){
-
-    const url = 'http://localhost:8080/api/v1/user/create?token=' + this.token;
-
-    const body = { nome: nome, login: login, senha: senha };
-
-    this.http.post<UserLoginResponse>(url,body).pipe(
-      catchError((error) => {
-        if (error.status === 401) {
-          this.statusSenha = "";
-          this.statusLogin = "";
-          this.statusCriarConta = 'Erro ao criar conta';
-          this.corStatus = 'red';
-        } else {
-          this.statusSenha = "";
-          this.statusLogin = "";
-          this.statusCriarConta = 'Ocorreu um erro inesperado.';
-          this.corStatus = 'red';
-        }
-        return throwError(error);
-      })
-    )
-   .subscribe(resposta => {
-
-    console.log(resposta)
-
-    if(resposta.status == "CONTA_CRIADA")
-    this.statusSenha = "";
-    this.statusLogin = "";
-    this.statusCriarConta = 'Conta criada com sucesso!';
-    this.corStatus = 'green';
-   })
-
-  }
-
-  ngAfterViewInit() {
-    this.signUpButton = this.elementRef.nativeElement.querySelector('#signUp');
-    this.signInButton = this.elementRef.nativeElement.querySelector('#signIn');
-    this.container = this.elementRef.nativeElement.querySelector('#container');
-
-    this.signUpButton.addEventListener('click', () => {
-      this.container.classList.add('right-panel-active');
-    });
-
-    this.signInButton.addEventListener('click', () => {
-      this.container.classList.remove('right-panel-active');
-    });
-  }
-
-  ngOnDestroy() {
-    this.signUpButton.removeEventListener('click');
-    this.signInButton.removeEventListener('click');
-  }
   
 }
 

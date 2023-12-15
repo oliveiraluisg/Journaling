@@ -38,7 +38,7 @@ export class CadastroComponent implements OnInit{
 
   constructor(private elementRef: ElementRef,private typingService: TypingService, private http: HttpClient, private timerService: TimerService) {
     this.typingService.typeText(
-      ['Aonde você quiser.', 'A qualquer hora.', 'De graça.'],
+      ['Bem vindo de volta!'],
       200,
       (text) => {
         this.typingText = text;
@@ -70,82 +70,6 @@ export class CadastroComponent implements OnInit{
         this.token = resposta.tokenSeq;
         console.log(this.token)
       })
-  }
-
-
-  enviaRequisicaoLogin(login : string, senha: string){
-
-    const url = 'http://localhost:8080/api/v1/user/validation?token=' + this.token;
-
-    const body = { login: login, senha: senha };
-
-    this.http.post<UserLoginResponse>(url,body).pipe(
-      catchError((error) => {
-        if (error.status === 401) {
-          this.statusCriarConta = "";
-          this.statusSenha = "";
-          this.statusLogin = 'Credenciais inválidas';
-          this.corStatus = 'red';
-        } else {
-          this.statusCriarConta = "";
-          this.statusSenha = "";
-          this.statusLogin = 'Ocorreu um erro inesperado.';
-          this.corStatus = 'red';
-        }
-        return throwError(error);
-      })
-    )
-   .subscribe(resposta => {
-
-    console.log(resposta)
-    
-    if (resposta.status == "SUCESSO_LOGIN") {
-      this.statusCriarConta = "";
-      this.statusSenha = "";
-      this.statusLogin = "Login bem-sucedido!";
-      this.corStatus = "green";
-      localStorage.setItem('idUsuario', JSON.stringify(resposta.ID))
-      this.idUsuario = JSON.stringify(resposta.ID)
-      window.location.href = '/calendar';
-    }
-
-  });
-
-  }
-
-  enviaRequisicaoRecuperarSenha(email: string, senha: string){
-
-    const url = 'http://localhost:8080/api/v1/user/password?token=' + this.token;
-
-    const body = { login: email, senha: senha };
-
-    this.http.post<UserLoginResponse>(url,body).pipe(
-      catchError((error) => {
-        if (error.status === 401) {
-          this.statusCriarConta = "";
-          this.statusLogin = "";
-          this.statusSenha = 'Erro ao recuperar senha';
-          this.corStatus = 'red';
-        } else {
-          this.statusCriarConta = "";
-          this.statusLogin = "";
-          this.statusSenha = 'Ocorreu um erro inesperado.';
-          this.corStatus = 'red';
-        }
-        return throwError(error);
-      })
-    )
-   .subscribe(resposta => {
-
-    console.log(resposta)
-
-    if(resposta.status != "USUARIO_INEXISTENTE")
-    this.statusCriarConta = "";
-    this.statusLogin = "";
-    this.statusSenha = 'Senha atualizada com sucesso!';
-    this.corStatus = 'green';
-   })
-
   }
 
   botaoCriarHabilitado: boolean = false;
@@ -191,25 +115,6 @@ export class CadastroComponent implements OnInit{
     this.corStatus = 'green';
    })
 
-  }
-
-  ngAfterViewInit() {
-    this.signUpButton = this.elementRef.nativeElement.querySelector('#signUp');
-    this.signInButton = this.elementRef.nativeElement.querySelector('#signIn');
-    this.container = this.elementRef.nativeElement.querySelector('#container');
-
-    this.signUpButton.addEventListener('click', () => {
-      this.container.classList.add('right-panel-active');
-    });
-
-    this.signInButton.addEventListener('click', () => {
-      this.container.classList.remove('right-panel-active');
-    });
-  }
-
-  ngOnDestroy() {
-    this.signUpButton.removeEventListener('click');
-    this.signInButton.removeEventListener('click');
   }
   
 }
