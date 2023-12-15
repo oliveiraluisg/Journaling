@@ -51,10 +51,12 @@ export class ProjetoComponent {
     this.http.post(url, Projeto).subscribe(
       response => {
         console.log('Projeto salvo com sucesso!');
+        window.alert("Projeto salvo com sucesso");
         location.reload();
       },
       error => {
         console.log('Erro ao salvar projeto:', error);
+        window.alert("Preencha todos os campos");
       }
     );
 
