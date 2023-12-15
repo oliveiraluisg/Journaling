@@ -37,10 +37,10 @@
       <h1>Anotações</h1>
       <div class="anotacao" *ngFor="let lembrete of lembretes">
         <h2>{{ lembrete.anotacao }}</h2>
-        <h4>{{ lembrete.descricao }}</h4>
+        <h4>{{ lembrete.id }}</h4>
         <div class="botoes">
-          <button class="far fa-edit" (click)="deleteLembretes"></button>
-          <button class="far fa-trash-alt" (click)="deleteLembretes"></button>
+          <button class="far fa-edit" (click)="deleteLembretes(lembrete)"></button>
+          <button class="far fa-trash-alt" (click)="deleteLembretes(lembrete)"></button>
         </div>
       </div>
     </div>

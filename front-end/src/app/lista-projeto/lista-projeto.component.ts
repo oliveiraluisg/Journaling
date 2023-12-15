@@ -77,6 +77,27 @@ export class ListaProjetoComponent {
         this.projetos = resposta;
       });
     }
+
+    deleteProjeto(projeto: Projeto): void{
+  
+      const url = 'http://localhost:8080/api/v1/projeto';
+    
+      this.http.delete<Projeto[]>(url, {
+        headers: {
+          'id' : ""+projeto.id,
+          'Content-Type': 'application/json',
+        }
+        
+      }).pipe(
+        catchError((error) => {
+          console.error('Error fetching lembretes', error);
+          return throwError(error);
+        })
+      ).subscribe(resposta => {
+        this.projetos = resposta;
+        this.recuperaProjetos();
+      });
+    }
   
   }
 

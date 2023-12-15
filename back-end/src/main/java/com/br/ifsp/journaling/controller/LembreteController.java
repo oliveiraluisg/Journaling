@@ -72,7 +72,7 @@ public class LembreteController {
 
 
     @DeleteMapping
-    public ResponseEntity<Object> deletaLembrete(@RequestHeader Long idLembrete, @RequestHeader String token) {
+    public ResponseEntity<Object> deletaLembrete(@RequestHeader Long idLembrete) {
 
         Optional<Lembrete> lembrete = repository.findById(idLembrete);
 

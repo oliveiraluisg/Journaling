@@ -73,11 +73,32 @@ export class ListaTaskComponent implements OnInit{
       
     }).pipe(
       catchError((error) => {
-        console.error('Error fetching tarefas', error);
+        console.error('Error fetching lembretes', error);
         return throwError(error);
       })
     ).subscribe(resposta => {
       this.tarefas = resposta;
+    });
+  }
+
+  deleteTarefa(tarefa: Tarefa): void{
+  
+    const url = 'http://localhost:8080/api/v1/tarefa';
+  
+    this.http.delete<Tarefa[]>(url, {
+      headers: {
+        'id' : ""+tarefa.id,
+        'Content-Type': 'application/json',
+      }
+      
+    }).pipe(
+      catchError((error) => {
+        console.error('Error fetching lembretes', error);
+        return throwError(error);
+      })
+    ).subscribe(resposta => {
+      this.tarefas = resposta;
+      this.recuperaTarefas();
     });
   }
 

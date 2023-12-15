@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
-import { HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -84,33 +83,32 @@ export class ListaAnotacoesComponent implements OnInit{
   }
 
 
-  deleteLembretes(lembrete: Lembrete): void {
-    const url = `http://localhost:8080/api/v1/lembrete/${lembrete.Id}`;
+  deleteLembretes(lembrete: Lembrete): void{
+    console.log('cheguei aqui' + lembrete)
+
+    const url = 'http://localhost:8080/api/v1/lembrete';
   
-    const httpOptions = {
-      headers: new HttpHeaders({
+    this.http.delete<Lembrete[]>(url, {
+      headers: {
+        'idLembrete' : ""+lembrete.id,
         'Content-Type': 'application/json',
+      }
+      
+    }).pipe(
+      catchError((error) => {
+        console.error('Error fetching lembretes', error);
+        return throwError(error);
       })
-    };
-  
-    this.http.delete(url, httpOptions)
-      .pipe(
-        catchError((error) => {
-          console.error('Error deleting lembrete', error);
-          return throwError(error);
-        })
-      )
-      .subscribe(() => {
-        this.lembretes = this.lembretes.filter(l => l.Id !== lembrete.Id);
-      });
+    ).subscribe(resposta => {
+      this.lembretes = resposta;
+      this.recuperaLembretes();
+    });
   }
-  
-   
 
 }
 
 interface Lembrete{
-  Id: any;
+  id: any;
   user: User;
   anotacao: string;
   data: Date;
