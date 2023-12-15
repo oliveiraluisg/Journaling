@@ -165,7 +165,7 @@ main{
   z-index: 1;
   bottom: 50px;
   right: 0;
-  background-color: transparent; 
+  background-color: transparent; /* Mude de #fff para transparente */
 }
 
 
@@ -193,7 +193,7 @@ main{
   position: fixed;
   right: 20px;
   bottom: 80px;
-  background-color: transparent; 
+  background-color: transparent; /* Alterado de #fff para transparent */
   border-radius: 10px;
   padding: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -207,7 +207,7 @@ main{
 }
 
 .show {
-  visibility: visible !important; 
+  visibility: visible !important; /* Updated from 'display: block' */
   opacity: 1 !important; 
 }
 
@@ -238,16 +238,31 @@ main{
 
 .tarefa .botoes {
   text-align: right;
-}
-
-.tarefa i{
-  text-align: right;
   color: black;
   font-size: 17px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
 }
 
 p{
   font-size: 18px;
+}
+
+.add-photo-btn {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 1px dashed #ccc;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.add-photo-btn i {
+  font-size: 48px;
+  line-height: 100px;
+  color: #ccc;
 }
 
 @media screen and (min-width: 992px){
@@ -280,17 +295,5 @@ p{
     width: 80%;
     align-self: center;
   }
-
-  .tarefas .tarefa{
-    margin-bottom: 10px;
-    width: 80%;
-    height: 130px;
-  }
-
-  .tarefas {
-    align-items: center;
-    display: flex;
-    margin: 0 auto;
   
-  }
 }
